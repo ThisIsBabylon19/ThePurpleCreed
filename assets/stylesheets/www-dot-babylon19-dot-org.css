@@ -18,6 +18,11 @@ html, body, main { width: 100%; height: 100%; }
 .inception br { display: none; }
 /*** END CANCEL ***/
 
+/*** Z-INDEXES ***/
+.d-background { position: relative; z-index: 10; }
+main { position: relative; z-index: 20; }
+/*** END Z-INDEXES ***/
+
 /*** COLORS ***/ 
 { color: #340853; }
 
@@ -118,6 +123,25 @@ html { background-color: black; }
 /*** END MEDIA-QUERIES ***/
 
 /*** DECORATION ***/
+.d-background {
+	position: fixed; top: 0; left: 0;
+	display: block;
+	width: 100%; height: 100%;
+	
+	background-image: url("../../assets/images/background-1.png");
+	background-position: center bottom;
+	background-size: cover;
+
+	filter: grayscale(100%);
+}
+.d-background:after {
+	content: ""; position: absolute; top: 0; left: 0;
+	display: block;
+	width: 100%; height: 100%;
+	
+	background-color: rgba(0, 0, 0, .9);
+}
+
 .d-cssCentered {
     display: flex;
     align-items: center;
